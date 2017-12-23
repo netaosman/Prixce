@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 //Router
-import { RouterModule, Routes } from '@angular/router';
+// import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 //Angular to firebase
 import { AngularFireModule } from 'angularfire2';
@@ -27,13 +28,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { SettingComponent } from './components/setting/setting.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
-//Create the app routes
-const appRoutes: Routes = [
-  {path: '', component: DashboardComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
+import { ClientService } from './services/client.service';
 
-]
 
 @NgModule({
   declarations: [
@@ -53,13 +49,14 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(environment.firebase, 'clientpanelapp' ),
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase, 'clientpanelapp-126b5' ),
     AngularFireAuthModule
   ],
   providers: [
     AngularFireDatabase,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ClientService
   ],
   bootstrap: [AppComponent]
 })
