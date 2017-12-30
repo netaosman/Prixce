@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 //Router
-// import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 //Angular to firebase
@@ -30,6 +29,14 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 import { ClientService } from './services/client.service';
 
+//pages modules
+import { PrixceModule } from './pages/prixce/prixce.module';
+import { MarketModule } from './pages/market/market.module';
+import { ValueModule } from './pages/value/value.module';
+import { ClientsModule } from './pages/clients/clients.module';
+import { CostsModule } from './pages/costs/costs.module';
+import { AuthModule } from './pages/auth/auth.module';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +58,13 @@ import { ClientService } from './services/client.service';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase, 'clientpanelapp-126b5' ),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    PrixceModule,
+    MarketModule,
+    ValueModule,
+    ClientsModule,
+    CostsModule,
+    AuthModule
   ],
   providers: [
     AngularFireDatabase,

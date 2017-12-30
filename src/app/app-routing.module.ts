@@ -17,13 +17,32 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { SettingComponent } from './components/setting/setting.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+
 //Create the app routes
 const appRoutes: Routes = [
-    { path: '', component: DashboardComponent },
+    // { path: '', component: DashboardComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'login', component: LoginComponent }
+    { path: 'login', component: LoginComponent },
+    {
+        path: '',
+        redirectTo: '/prixce/result',
+        pathMatch: 'full'
+    },
+    {
+        path: 'prixce',
+        loadChildren: './pages/prixce/prixce.module#PrixceModule',
+        data: { preload: true }
+    },
+    {
+        path: 'market',
+        loadChildren: './pages/market/market.module#MarketModule',
+        data: { preload: true }
+    },
+
+
 
 ]
+
 
 @NgModule({
     imports: [
