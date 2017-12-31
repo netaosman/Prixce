@@ -38,6 +38,26 @@ const appRoutes: Routes = [
         loadChildren: './pages/market/market.module#MarketModule',
         data: { preload: true }
     },
+    {
+        path: 'value',
+        loadChildren: './pages/vlaue/vlaue.module#ValueModule',
+        data: { preload: true }
+    },
+    {
+        path: 'clients',
+        loadChildren: './pages/clients/clients.module#ClientsModule',
+        data: { preload: true }
+    },
+    {
+        path: 'costs',
+        loadChildren: './pages/costs/costs.module#CostsModule',
+        data: { preload: true }
+    },
+    {
+        path: 'auth',
+        loadChildren: './pages/auth/auth.module#AuthModule',
+        data: { preload: true }
+    },
 
 
 
